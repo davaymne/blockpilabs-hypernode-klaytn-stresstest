@@ -1,8 +1,6 @@
 import http from 'k6/http';
 import { check, sleep } from 'k6';
 
-
-
 export const options = {
   stages: [
     { duration: '5m', target: 500 },
@@ -11,7 +9,7 @@ export const options = {
   ],
 };
 
-const url = '<YOUR API KEY>'
+const url = 'https://klaytn.testnet.blockpi.net/v1/rpc/<YOUR API KEY>'
 const headers = { headers: { 'Content-Type': 'application/json' },}
 
 export default function () {
