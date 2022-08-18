@@ -1,8 +1,36 @@
 # blockpilabs-hypernode-klaytn-stresstest
 
+
+## Tasks
+
+### Task 1
+Test one (during the first 15 mins): 
+ - Test one is to send simple requests with gradually increased virtual users. Choose the methods below. You can decide the request combination and the request order. Then follow the 3×5 mins VU rules to send requests to the BlockPI network. Save the resulting output of the load testing tool at the end. Check out the k6 docs to specify different VUs at different time https://k6.io/docs/test-types/soak-testing.
+
+ - Methods: klay_getTransactionBy*******, klay_blockNumber, klay_getTransactionReceipt
+
+3×5 mins VU rules:
+ - First 5 minutes: 500 virtual users.
+ - Second 5 minutes: 1000 virtual users. 
+ - Third 5 minutes: 2000 virtual users.
+
+### Task 2
+
+Test two (during the second 15 mins):
+ - Test two is to send requests to interact with a dapp contract. Find out the target contract abi and write a script to get the token price with "estimatePos" method. Then follow the 3×5 mins VU rules to send requests to the BlockPI network. Save the resulting output of the load testing tool at the end. 
+
+Script demo: https://github.com/BlockPILabs/StressTest/tree/master/test2
+Target contract: https://scope.klaytn.com/account/0xc6a2ad8cc6e4a7e08fc37cc5954be07d499e7654?tabId=contractCode
+
+3×5 mins VU rules:
+ - First 5 minutes: 500 virtual users.
+ - Second 5 minutes: 1000 virtual users.
+ - Third 5 minutes: 2000 virtual users.
+
+## Tool for stress test
 For stress-test we use https://k6.io/
 
-## Install k6
+### Install k6
 ```
 mkdir .gnupg/
 sudo gpg --no-default-keyring --keyring /usr/share/keyrings/k6-archive-keyring.gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys C5AD17C747E3415A3642D57D77C6C491D6AC1D69
