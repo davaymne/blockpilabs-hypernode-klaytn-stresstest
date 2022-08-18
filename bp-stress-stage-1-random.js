@@ -18,9 +18,7 @@ export const options = {
 
 export default function () {
     let response;
-    const BASE_URL =
-        "https://klaytn.testnet.blockpi.net/v1/rpc/<YOUR API KEY>";
-
+    const url = "https://klaytn.testnet.blockpi.net/v1/rpc/<YOUR API KEY>";
     const data = [
         {
             jsonrpc: "2.0",
@@ -44,11 +42,9 @@ export default function () {
         },
     ];
     const randMethod = data[Math.floor(Math.random() * data.length)];
-    const headers = {
-        headers: { "Content-Type": "application/json" },
-    };
+    const headers = { headers: { "Content-Type": "application/json" },};
 
-    response = http.post(BASE_URL, JSON.stringify(randMethod), headers);
+    response = http.post(url, JSON.stringify(randMethod), headers);
     check(response, { 'Is status = 200': (r) => r.status == 200 });
     check(response, { 'Is status != 200': (r) => r.status != 200 });
     check(response, {
