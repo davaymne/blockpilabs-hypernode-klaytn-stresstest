@@ -39,6 +39,19 @@ sudo apt-get update
 sudo apt-get install k6
 ```
 
+>  NOTE:
+If you faced an issue with max file open
+
+Increase file limit
+```
+sudo bash -c "cat >/etc/security/limits.d/90-blockpi-nofiles.conf <<EOF
+# Increase process file descriptor count limit
+* - nofile 1000000
+EOF"
+```
+Close all open sessions (log out then, in again)
+
+
 ## Run test script
 
 ```
