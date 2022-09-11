@@ -19,8 +19,8 @@ Test one (during the first 15 mins):
 Test two (during the second 15 mins):
  - Test two is to send requests to interact with a dapp contract. Find out the target contract abi and write a script to get the token price with "estimatePos" method. Then follow the 3×5 mins VU rules to send requests to the BlockPI network. Save the resulting output of the load testing tool at the end. 
 
-Script demo: https://github.com/BlockPILabs/StressTest/tree/master/test2
-Target contract: https://scope.klaytn.com/account/0xc6a2ad8cc6e4a7e08fc37cc5954be07d499e7654?tabId=contractCode
+ - Script demo: https://github.com/BlockPILabs/StressTest/tree/master/test2
+ - Target contract: https://scope.klaytn.com/account/0xc6a2ad8cc6e4a7e08fc37cc5954be07d499e7654?tabId=contractCode
 
 3×5 mins VU rules:
  - First 5 minutes: 500 virtual users.
